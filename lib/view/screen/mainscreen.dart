@@ -83,7 +83,8 @@ class _MainScreenState extends State<MainScreen> {
                           itemBuilder: (BuildContext context, int index) {
                             return TopicsInCards(
                               topictitle: "${snapshot.data[index].title}",
-                              topicimage: "${snapshot.data[index].urlToImage}", topiclink: '${snapshot.data[index].url}',
+                              topicimage: "${snapshot.data[index].urlToImage}",
+                              topiclink: '${snapshot.data[index].url}',
                             );
                           },
                         );
