@@ -1,22 +1,25 @@
-import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/constant.dart';
 import 'package:newsapp/controller/func.dart';
-import 'package:share/share.dart';
+import 'package:newsapp/view/screen/showarticles.dart';
 
 class TopicsInCards extends StatelessWidget {
   String topictitle;
   var topicimage;
   String topiclink;
 
-  TopicsInCards({required this.topictitle, required this.topicimage,required this.topiclink});
+  TopicsInCards(
+      {required this.topictitle,
+      required this.topicimage,
+      required this.topiclink});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.push(context, route);
-      },
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+          return ShowArticles();
+        }));      },
       child: Card(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
@@ -68,6 +71,14 @@ class TopicsInCards extends StatelessWidget {
                   IconButton(
                     onPressed: () {
                       Func.copylink(topiclink);
+                      const snackBar = SnackBar(
+                        content: Text(
+                          "Link Copied!",
+                          textAlign: TextAlign.center,
+                        ),
+                        backgroundColor: Colors.black,
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
                     icon: const Icon(
                       Icons.copy,
