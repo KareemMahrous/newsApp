@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:newsapp/constant.dart';
 import 'package:newsapp/controller/APIData.dart';
 import 'package:newsapp/view/widgets/buttoncategories.dart';
@@ -25,14 +26,16 @@ class _MainScreenState extends State<MainScreen> {
                 color: white, fontSize: fontTitle, fontWeight: FontWeight.w800),
           ),
           centerTitle: true,
-          //action for exit button icon
-          //needs implementation
-          actions: const [
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.exit_to_app,
-                color: white,
+
+          actions:  [
+            GestureDetector(
+              onTap: ()=>SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.exit_to_app,
+                  color: white,
+                ),
               ),
             ),
           ],

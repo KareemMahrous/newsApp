@@ -69,7 +69,7 @@ class _CategoriesScreensState extends State<CategoriesScreens> {
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
                   widget.CategoryType,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: black,
                       fontSize: fontLarge,
                       fontWeight: FontWeight.w600),

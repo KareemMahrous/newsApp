@@ -15,16 +15,19 @@ class _ShowArticlesState extends State<ShowArticles> {
         child: FutureBuilder(
           future: APIData.getnews(),
           builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-            return ListView.builder(
+            return (snapshot.data == null)
+                ? const Text("")
+                : ListView.builder(
+              itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         "${snapshot.data[index].title}",
                         textAlign: TextAlign.start,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.w800,
                             fontSize: fontXLarge,
                             color: black),
@@ -36,19 +39,19 @@ class _ShowArticlesState extends State<ShowArticles> {
                       height: 200,
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         "${snapshot.data[index].description}",
                         textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: fontLarge, color: black),
+                        style: const TextStyle(fontSize: fontLarge, color: black),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         "${snapshot.data[index].content}",
                         textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: fontSubTitle, color: black),
+                        style: const TextStyle(fontSize: fontSubTitle, color: black),
                       ),
                     ),
                     Container(
@@ -56,7 +59,7 @@ class _ShowArticlesState extends State<ShowArticles> {
                       child: Text(
                         "By ${snapshot.data[index].author}",
                         textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: fontSmaller,color: black),
+                        style: const TextStyle(fontSize: fontSmaller,color: black),
                       ),
                     )
                   ],
