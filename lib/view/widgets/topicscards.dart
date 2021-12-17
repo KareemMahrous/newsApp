@@ -1,6 +1,7 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/constant.dart';
+import 'package:newsapp/controller/func.dart';
 import 'package:share/share.dart';
 
 class TopicsInCards extends StatelessWidget {
@@ -57,8 +58,7 @@ class TopicsInCards extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      Share.share('$topiclink');
-                      print('Coppied: $topiclink');
+                      Func.sharelink(topiclink);
                     },
                     icon: const Icon(
                       Icons.share,
@@ -67,8 +67,7 @@ class TopicsInCards extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                      FlutterClipboard.copy('$topiclink');
-                      print('Coppied: $topiclink');
+                      Func.copylink(topiclink);
                     },
                     icon: const Icon(
                       Icons.copy,
