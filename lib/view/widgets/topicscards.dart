@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/constant.dart';
 import 'package:newsapp/controller/func.dart';
 import 'package:newsapp/view/screen/showarticles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TopicsInCards extends StatelessWidget {
   String topictitle;
@@ -17,9 +18,11 @@ class TopicsInCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        // if (!await launch(topiclink)) {}
         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
           return ShowArticles();
-        }));      },
+        }));
+      },
       child: Card(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
@@ -41,8 +44,7 @@ class TopicsInCards extends StatelessWidget {
                       image: (topicimage == null)
                           ? const NetworkImage(
                               "https://bitsofco.de/content/images/2018/12/broken-1.png")
-                          : NetworkImage(topicimage))
-              ),
+                          : NetworkImage(topicimage))),
             ),
             Container(
               child: Padding(
