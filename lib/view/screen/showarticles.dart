@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/constant.dart';
 import 'package:newsapp/controller/APIData.dart';
+import 'package:newsapp/view/screen/categoriesscreen.dart';
 
 class ShowArticles extends StatefulWidget {
   String topictitle;
@@ -8,7 +9,7 @@ class ShowArticles extends StatefulWidget {
   String topiclink;
   String description;
   String content;
-
+  // String cat = ;
 
   ShowArticles(this.topictitle, this.topicimage, this.topiclink,this.description,this.content);
 

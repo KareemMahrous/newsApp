@@ -7,7 +7,6 @@ import '../../constant.dart';
 
 class CategoriesScreens extends StatefulWidget {
   String CategoryType;
-
   CategoriesScreens(this.CategoryType);
 
   @override
