@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/constant.dart';
 import 'package:newsapp/controller/func.dart';
 import 'package:newsapp/view/screen/showarticles.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class TopicsInCards extends StatelessWidget {
   String topictitle;
   var topicimage;
   String topiclink;
+  String description;
+  String content;
 
   TopicsInCards(
-      {required this.topictitle,
+      {required this.description,
+      required this.content,
+      required this.topictitle,
       required this.topicimage,
       required this.topiclink});
 
@@ -19,8 +22,9 @@ class TopicsInCards extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // if (!await launch(topiclink)) {}
-        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
-          return ShowArticles();
+        Navigator.push(context,
+            MaterialPageRoute(builder: (BuildContext context) {
+          return ShowArticles(topictitle, topicimage, topiclink,description,content);
         }));
       },
       child: Card(

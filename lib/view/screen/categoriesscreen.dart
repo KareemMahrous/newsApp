@@ -86,6 +86,8 @@ class _CategoriesScreensState extends State<CategoriesScreens> {
                           itemCount: snapshot.data.length,
                           itemBuilder: (BuildContext context, int index) {
                             return TopicsInCards(
+                              content: "${snapshot.data[index].description}",
+                              description: "${snapshot.data[index].content}",
                               topictitle: "${snapshot.data[index].title}",
                               topicimage: "${snapshot.data[index].urlToImage}",
                               topiclink: '${snapshot.data[index].url}',
