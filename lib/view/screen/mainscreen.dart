@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:newsapp/constant.dart';
 import 'package:newsapp/controller/APIData.dart';
 import 'package:newsapp/view/widgets/buttoncategories.dart';
@@ -26,16 +25,6 @@ class _MainScreenState extends State<MainScreen> {
                 color: white, fontSize: fontTitle, fontWeight: FontWeight.w800),
           ),
           centerTitle: true,
-          actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.exit_to_app,
-                color: white,
-              ),
-              onPressed: () =>
-                  SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
-            )
-          ],
         ),
         drawer: Drawer(
             child: ListView(

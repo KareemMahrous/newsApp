@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/constant.dart';
-import 'package:newsapp/controller/APIData.dart';
-import 'package:newsapp/view/screen/categoriesscreen.dart';
 
 class ShowArticles extends StatefulWidget {
   String topictitle;

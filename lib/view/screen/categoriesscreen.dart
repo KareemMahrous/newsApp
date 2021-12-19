@@ -29,15 +29,7 @@ class _CategoriesScreensState extends State<CategoriesScreens> {
           centerTitle: true,
           //action for exit button icon
           //needs implementation
-          actions: const [
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.exit_to_app,
-                color: white,
-              ),
-            ),
-          ],
+
         ),
         drawer: Drawer(
             child: ListView(
